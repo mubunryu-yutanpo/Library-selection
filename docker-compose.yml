@@ -1,0 +1,25 @@
+# version: '3.8'
+services:
+  app:
+    build: .
+    container_name: dev-app
+    volumes:
+      - ./:/var/www/html:delegated
+    ports:
+      - "8000:80"     # Apache が 80 番でリッスンするようにマッピング
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    container_name: dev-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: laravel
+    volumes:
+      - dbdata:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+volumes:
+  dbdata:
