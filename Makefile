@@ -8,13 +8,17 @@ help:
 	@echo "Usage: make [target]"
 	@echo
 	@echo "  make install       # composer & npm install"
-	@echo "  make up            # docker compose up -d --build"
+	@echo "  make init          # 初期化 (Laravel プロジェクト作成)"
+	@echo "  make fresh         # DB 初期化 & シーディング"
+	@echo "  make app 		    # docker compose exec app bash"
+	@echo "  make up            # docker compose up -d"
 	@echo "  make down          # docker compose down"
+	@echo "  make autoload      # composer dump-autoload"
 	@echo "  make migrate       # php artisan migrate"
 	@echo "  make test          # backend & frontend のテスト"
 	@echo "  make lint          # PHP Pint & ESLint"
 	@echo "  make storybook     # Storybook 起動"
-	@echo "  make swagger       # OpenAPI ドキュメント生成"
+	@echo "  make swagger-install # OpenAPI ドキュメント生成のためのインストール"
 	@echo "  make build         # フロント／バック本番ビルド"
 	@echo
 
@@ -31,16 +35,20 @@ npm-install:
 
 .PHONY: up
 up:
-	docker compose up -d --build
+	docker compose up -d
 
 .PHONY: app
 app:
-	docker compose up -d
-
+	docker compose exec app bash
 
 .PHONY: down
 down:
 	docker compose down
+
+.PHONY: autoload
+autoload:
+	docker compose exec app composer dump-autoload
+
 
 .PHONY: migrate
 migrate:
@@ -90,9 +98,14 @@ lint:
 storybook:
 	docker compose exec app npm run storybook
 
+# .PHONY: swagger
+# swagger:
+# 	docker compose exec app php artisan l5-swagger:generate
+
 .PHONY: swagger
-swagger:
-	docker compose exec app php artisan l5-swagger:generate
+swagger-install:
+	docker compose exec app npm install --save swagger-ui-dist
+
 
 .PHONY: build
 build:
@@ -100,3 +113,22 @@ build:
 	docker compose exec app npm run build
 	# Laravel 設定キャッシュ等
 	docker compose exec app php artisan config:cache
+
+.PHONY: generate-server
+generate-server:
+	@echo "🛠 Generating Laravel API stubs via Docker image"
+	docker run --rm \
+	  -v "$(PWD)":/local \
+	  -u "$(shell id -u):$(shell id -g)" \
+	  openapitools/openapi-generator-cli:v7.13.0 \
+	    generate \
+	      -i /local/openapi.yaml \
+	      -g php-laravel \
+	      -o /local/app/OpenApiGenerated \
+	      --skip-validate-spec \
+	      --additional-properties='\
+            composerPackageName=your-vendor/your-package,\
+            artifactVersion=1.0.0,\
+            apiPackage=Http\\Controllers\\Api,\
+            modelPackage=Models,\
+            invokerPackage=App' \
