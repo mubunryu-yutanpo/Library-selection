@@ -1,0 +1,10 @@
+.gitignore
+.openapi-generator-ignore
+Api/DefaultApiInterface.php
+Http/Controllers/DefaultController.php
+Model/User.php
+Model/UserCreate.php
+README.md
+composer.json
+phpunit.xml.dist
+routes.php
