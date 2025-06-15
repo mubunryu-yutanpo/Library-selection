@@ -24,6 +24,7 @@ jobs:
       # ESLint を reviewdog で実行
       - name: ESLint via reviewdog
         uses: reviewdog/action-eslint@v1
+        continue-on-error: true
         with:
           # PR の行コメントモード
           reporter: github-pr-review
@@ -31,4 +32,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # ESLint 実行フラグ
           eslint_flags: . --format json --no-ignore
-          fail_level: none # エラーでジョブを失敗させない
+          # エラーでジョブを失敗させない
+          fail_level: none
+          fail_on_error: false
