@@ -20,7 +20,8 @@ help:
 	@echo "  make storybook     # Storybook 起動"
 	@echo "  make swagger-install # OpenAPI ドキュメント生成のためのインストール"
 	@echo "  make build         # フロント／バック本番ビルド"
-	@echo
+	@echo "  make generate-server # OpenAPI から Laravel API スタブを生成"
+	@echo "  make install-breeze # Breeze インストール"
 
 .PHONY: install
 install: composer-install npm-install
@@ -132,3 +133,11 @@ generate-server:
             apiPackage=Http\\Controllers\\Api,\
             modelPackage=Models,\
             invokerPackage=App' \
+
+.PHONY: install-breeze
+install-breeze:
+	docker compose exec app composer require laravel/breeze --dev
+	docker compose exec app php artisan breeze:install vue
+	docker compose exec app npm install
+	docker compose exec app npm run build
+	docker compose exec app php artisan migrate
