@@ -1,0 +1,28 @@
+@use '../../Foundation/variables' as *;
+
+.p-case{
+    background: rgba(254, 179, 235, .3); //$pinkの透明度30%
+    padding: $space_40 0;
+
+    &__title{
+        color: $purple;
+
+        &--sub{
+            color: $white;
+            font-weight: bold;
+            margin: 0 0 $space_30;
+            text-align: center;
+        }
+    }
+    &__container{
+        padding: $space_40 $space_30;
+
+        @include mq(sm){
+            padding: 0 $space_25;
+        }
+    }
+
+    &__box{
+        max-width: 100%;
+    }
+}

@@ -23,6 +23,7 @@ help:
 	@echo "  make generate-server # OpenAPI から Laravel API スタブを生成"
 	@echo "  make install-breeze # Breeze インストール"
 
+
 .PHONY: install
 install: composer-install npm-install
 
@@ -141,3 +142,7 @@ install-breeze:
 	docker compose exec app npm install
 	docker compose exec app npm run build
 	docker compose exec app php artisan migrate
+
+.PHONY: npm run dev
+dev:
+	docker compose exec app npm run dev

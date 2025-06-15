@@ -1,0 +1,34 @@
+@use '../../Foundation/variables' as *;
+
+.p-list{
+
+    &__container{
+        padding: $space_40 0 $space_40 $space_default;
+        margin-right: -15px;
+
+        @include mq(){
+            margin-right: 0;
+        }
+
+        @include mq(sm){
+            padding-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    &__wrap{
+        box-sizing: border-box;
+        margin: $space_30 auto 0;
+        padding: $space_30 $space_20;
+
+        @include mq(sm){
+            margin: $space_30 0 $space_20;
+            padding: $space_10 $space_20;
+        }
+    }
+
+    &__none{
+        font-weight: bold;
+        margin: $space_40 0;
+    }
+}

@@ -1,0 +1,9 @@
+@use '../../Foundation/variables' as *;
+
+.p-mypage{
+    padding: 60px 0;
+
+    @include mq(){
+        padding: $space_40 0;
+    }
+}

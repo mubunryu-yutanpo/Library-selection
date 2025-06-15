@@ -1,0 +1,18 @@
+@use '../../Foundation/variables' as *;
+
+.p-menu{
+    display: none;
+    height: 40px;
+    width: 40px;
+
+    @include mq(){
+        display: block;
+        position: absolute;
+        right: 10px;
+        z-index: 10;
+    }
+
+    &__button{
+        background: none;
+    }
+}

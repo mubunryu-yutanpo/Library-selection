@@ -1,0 +1,9 @@
+@use '../../Foundation/variables' as *;
+
+.p-home{
+    margin: 0 -30px -40px;
+
+    @include mq(sm){
+        margin: 0 -15px -30px;
+    }
+}

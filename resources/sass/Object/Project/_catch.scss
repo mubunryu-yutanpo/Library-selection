@@ -1,0 +1,42 @@
+@use '../../Foundation/variables' as *;
+
+.p-catch{
+    background: $yellow;
+
+    &__image{
+        
+        @include mq(){
+            display: none;
+        }
+
+        &--sp{
+            display: none;
+
+            @include mq(){
+                display: block;
+            }
+        }
+    }
+
+    &__container{
+        padding: $space_40 $space_20
+    }
+
+    &__text{
+        font-size: $font-size_18;
+        text-align: center;
+
+        @include mq(){
+            font-size: $font-size_default;
+        }
+
+        &--big{
+            color: $purple;
+            font-size: $font-size_24;
+
+            @include mq(){
+                font-size: 22px;
+            }
+        }
+    }
+}

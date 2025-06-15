@@ -1,0 +1,28 @@
+@use '../../Foundation/variables' as *;
+
+.p-header{
+    align-items: center;
+    background: $purple;
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    padding: $space_10;
+    position: fixed;
+    transition: all .5s;
+    width: 100%;
+    z-index: 3;
+
+    &.is-bg-change{
+        opacity: 1;
+        transition: all .5s;
+    }
+    
+    &__title{
+        margin: 0;
+    }
+
+    &__link{
+        color: $white;
+    }
+}

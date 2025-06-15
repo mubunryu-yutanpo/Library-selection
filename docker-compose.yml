@@ -7,6 +7,7 @@ services:
       - ./:/var/www/html:delegated
     ports:
       - "8000:80"     # Apache が 80 番でリッスンするようにマッピング
+      - "5173:5173" # Vite のデフォルトポート
     depends_on:
       - db
 

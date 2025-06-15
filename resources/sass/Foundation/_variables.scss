@@ -1,0 +1,74 @@
+@use 'sass:map';
+
+// Body
+$default-bg: #FBF2CF;
+
+// Typography
+$font-family-sans-serif: 'Nunito', sans-serif;
+$default-font-family: 'Kaisei Opti', serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+//スペース
+$space-5: 5px;
+$space_10: 10px;
+$space_default: 15px;
+$space_20: 20px;
+$space_25: 25px;
+$space_30: 30px;
+$space_40: 40px;
+
+//文字サイズ
+$font-size_12:12px;
+$font-size_14:14px;
+$font-size_default:16px;
+$font-size_17: 17px;
+$font-size_18:18px;
+$font-size_20:20px;
+$font-size_24:24px;
+$font-size_30:30px;
+
+// Colors
+// $red: #FA7070;
+$indigo: #6574cd;
+// $purple: #9561e2;
+// $pink: #f66d9b;
+$orange: #f6993f;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
+// $black: #101010;
+$gray: #ededec;
+$lightgray: rgba(237, 237, 236, 0.5);
+// $yellow: #ffffe4;
+
+// insp
+// $blue: rgb(68,116,157);
+$twitter: #1da1f2;
+$lightblue:rgb(198,212,225);
+$white:rgb(255,255,255);
+$lightbrown:rgb(235,231,225);
+$brown: rgb(189,184,173);
+
+// match
+$pink: #feb3eb;
+$yellow: #ffffaa;
+$red: #ed1c24;
+$blue: #235789;
+$black: #06070e;
+$green: #395b50;
+$purple: #352652;
+
+
+//ブレークポイント
+$breakpoints: (
+  'sm': 'screen and (max-width:479px)',
+  'md': 'screen and (max-width:767px)',
+  'lg': 'screen and (max-width:1000px)',
+) !default;
+
+//mixin
+@mixin mq($breakpoint: md){
+  @media #{map.get($breakpoints,$breakpoint)}{
+    @content;
+  }
+}

@@ -1,0 +1,17 @@
+@use '../../Foundation/variables' as *;
+
+.p-footer{
+    background-color: $purple;
+    color: #fff;
+    font-size: $font-size_12;
+    font-family: "Lobster", cursive;
+    padding: $space_10 0;
+    text-align: center;
+
+    &.is-small-contents{
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: fixed;
+    }
+}

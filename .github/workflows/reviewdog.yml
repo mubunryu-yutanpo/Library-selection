@@ -1,0 +1,37 @@
+name: reviewdog
+
+# プルリクエスト発行時に実行
+on:
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      # ソースコードを取得
+      - uses: actions/checkout@v3
+
+      # Node.js セットアップ（ESLint 用）
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      # 依存パッケージをインストール
+      - name: Install dependencies
+        run: npm ci
+
+      # ESLint を reviewdog で実行
+      - name: ESLint via reviewdog
+        uses: reviewdog/action-eslint@v1
+        continue-on-error: true
+        with:
+          # PR の行コメントモード
+          reporter: github-pr-review
+          # GitHub が提供するトークン
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # ESLint 実行フラグ
+          eslint_flags: . --format json --no-ignore
+          # エラーでジョブを失敗させない
+          fail_level: none
+          fail_on_error: false

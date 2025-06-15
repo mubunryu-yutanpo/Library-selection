@@ -1,0 +1,21 @@
+@use '../../Foundation/variables' as *;
+
+.p-pagination{
+    padding-left: $space_default;
+
+    &__button{
+        background: $lightblue;
+        box-shadow: none;
+        margin: 0 $space-5;
+        padding: $space-10 $space_default;
+
+        &.active{
+            background: $blue;
+        }
+
+        &:hover{
+            background: $red;
+            color: $white;
+        }
+    }
+}

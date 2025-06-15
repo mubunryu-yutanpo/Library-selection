@@ -1,0 +1,21 @@
+@use '../../Foundation/variables' as *;
+
+.p-submit{
+    text-align: right;
+
+    &__button{
+
+        &--delete{
+            background: gray;
+            box-shadow: 0 0 8px 0 $gray;
+            color: $white;
+
+            &:hover{
+                background: $white;
+                border: 1px solid $red;
+                box-shadow: 0 0 8px 0 $gray;
+                color: $red;
+            }
+        }
+    }
+}

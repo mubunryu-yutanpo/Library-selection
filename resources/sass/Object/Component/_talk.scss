@@ -1,0 +1,60 @@
+@use '../../Foundation/variables' as *;
+
+.c-talk{
+    border-radius: 5px;
+    max-width: 45%;
+    padding: $space_10 $space_default;
+    position: relative;
+    width: fit-content;
+
+    @include mq(){
+        max-width: inherit;
+    }
+
+
+    &--me{
+        background: $lightbrown;
+        margin-right: auto;
+        text-align: left;
+
+        &:after{
+            border: solid transparent;
+            border-bottom-color: $lightbrown;
+            border-bottom-width: 10px;
+            border-left-width: 0;
+            border-right-width: 10px;
+            border-top-width: 10px;
+            bottom: 100%;
+            content:'';
+            height: 0;
+            left: 15%;
+            margin-left: 10px;
+            pointer-events:none;
+            position:absolute;
+            width: 0;
+        }    
+    }
+
+    &--other{
+        background: $lightblue;
+        margin-left: auto;
+        text-align: right;
+
+        &:after{
+            border: solid transparent;
+            border-bottom-width: 10px;
+            border-left-width: 10px;
+            border-right-width: 0;
+            border-top-width: 10px;
+            bottom:100%;
+            height:0;
+            left:85%;
+            margin-left: -10px;
+            content:'';
+            pointer-events:none;
+            position:absolute;
+            border-bottom-color: $lightblue;
+            width:0;
+        }
+    }
+}

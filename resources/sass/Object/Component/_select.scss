@@ -1,0 +1,9 @@
+@use '../../Foundation/variables' as *;
+
+.c-select{
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 8px 0 gray;
+    cursor: pointer;
+    padding: 10px 5px;
+}

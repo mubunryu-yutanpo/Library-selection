@@ -1,0 +1,17 @@
+@use '../../Foundation/variables' as *;
+
+.p-hero{
+    &__image{
+        @include mq(){
+            display: none;
+        }
+
+        &--sp{
+            display: none;
+
+            @include mq(){
+                display: block;
+            }
+        }
+    }
+}

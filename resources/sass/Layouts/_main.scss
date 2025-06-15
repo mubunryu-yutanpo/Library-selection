@@ -1,0 +1,11 @@
+@use '../Foundation/variables' as *;
+
+.l-main{
+    box-sizing: border-box;
+    min-height: 500px;
+    padding: $space_40 $space_30;
+
+    @include mq(sm){
+        padding: $space_30 $space_default;
+    }
+}

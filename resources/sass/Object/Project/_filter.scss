@@ -1,0 +1,14 @@
+@use '../../Foundation/variables' as *;
+
+.p-filter{
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: $space_default;
+
+    &__label{
+        margin: 0 $space_10 0 0;
+        text-align: right;
+    }
+
+}

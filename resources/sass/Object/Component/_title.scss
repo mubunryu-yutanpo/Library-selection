@@ -1,0 +1,13 @@
+@use '../../Foundation/variables' as *;
+
+.c-title{
+    // font-size: $font-size24;
+    font-weight: bold;
+    margin: $space_25 auto;
+    text-align: center;
+
+    &--sub-title{
+        margin: $space_40 0;
+    }
+
+}
