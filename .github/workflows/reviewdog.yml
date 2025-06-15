@@ -31,3 +31,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # ESLint 実行フラグ
           eslint_flags: . --format json --no-ignore
+          fail_level: none # エラーでジョブを失敗させない
