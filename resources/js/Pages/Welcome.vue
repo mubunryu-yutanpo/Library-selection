@@ -1,5 +1,7 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import 'swiper/css'
 
 defineProps({
     canLogin: {
@@ -15,6 +17,18 @@ defineProps({
     phpVersion: {
         type: String,
         required: true,
+    },
+    projectList: {
+        type:    Array,
+        default: () => []
+    },
+    swiperOptions: {
+        type:    Object,
+        default: () => ({
+            slidesPerView: 1,
+            loop:          true,
+            autoplay:      { delay: 3000 },
+        })
     },
 });
 
