@@ -1,0 +1,25 @@
+@use '../../Foundation/variables' as *;
+
+.p-detail-action{
+    margin: 50px auto;
+    max-width: 980px;
+    text-align: right;
+    width: 100%;
+
+    &__link{
+        background-color: $blue;
+        border-radius: 5px;
+        box-shadow: 0 0 8px 0 $blue;
+        color: $white;
+        cursor: pointer;
+        font-size: $font-size_default;
+        padding: $space_default $space_20;
+    
+        &:hover{
+            background-color: $lightblue;
+            box-shadow: 0 0 2px 0 $blue;
+            color: $blue;
+        }    
+
+    }
+}

@@ -1,0 +1,9 @@
+@use '../../Foundation/variables' as *;
+
+.p-counter{
+    margin: 0 0 $space_30 0;
+    
+    &__text{
+        text-align: right;
+    }
+}

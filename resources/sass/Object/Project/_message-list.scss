@@ -1,0 +1,30 @@
+@use '../../Foundation/variables' as *;
+
+.p-message-list{
+
+    &__container{
+        margin-bottom: $space_default;
+    }
+
+    &__text{
+        max-height: 80px;
+        overflow-y: hidden;
+    }
+
+    &__link{
+        @include mq(sm){
+            padding-right: 0;
+        }
+
+        &-box{
+            max-width: inherit;
+        }
+    }
+
+    &__user-image{
+
+        &-item{
+            border-radius: 100%;
+        }
+    }
+}

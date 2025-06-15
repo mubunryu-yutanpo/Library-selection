@@ -1,0 +1,73 @@
+@use '../../Foundation/variables' as *;
+
+.p-detail{
+    background: $white;
+    border-radius: 5px;
+    box-shadow: 0 0 8px 0 $gray;
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 980px;
+    padding: $space_30 $space_40;
+    width: 100%;
+
+    @include mq(){
+        padding: $space_20 $space-10;
+    }
+
+    &__share{
+        &-button{
+            background: #000;
+            border-radius: 20px;
+            box-shadow: 0 0 2px 0 gray;
+            color: $white;
+            font-size: $font-size_14;
+            font-weight: bold;
+            padding: $space-10 $space_default;
+
+            &:hover{
+                background: $white;
+                border: 1px solid #000;
+                color: $black;
+            }
+        }
+    }
+
+    &__dm{
+        margin: 0 $space_default 0 0;
+
+        @include mq(){
+            margin: $space_25 $space_default $space_25 0;
+        }
+
+        &-button{
+            border-radius: 20px;
+            box-shadow: 0 0 2px 0 gray;
+            color: $white;
+            font-size: $font-size_14;
+            font-weight: bold;
+            padding: $space-10 $space_default;
+
+            &:hover{
+                background: $lightblue;
+                border: 1px solid $blue;
+                color: $blue;
+                font-weight: bold;
+            }
+        }
+    }
+
+    &__container{
+        margin: $space_40 auto;
+    }
+
+    &__thumbnail{
+        border-radius: 5px;
+        box-shadow: 0 0 8px 0 $gray;
+        margin: 0 0 $space_30 0;
+    }
+
+    &__content{
+        margin: $space_30 0;
+    }
+
+}

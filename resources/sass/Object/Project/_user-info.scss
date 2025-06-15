@@ -1,0 +1,34 @@
+@use '../../Foundation/variables' as *;
+
+.p-user-info{
+    background: $white;
+    border-radius: 5px;
+    box-shadow: 0 0 8px 0 gray;
+    padding: $space_40 $space_30;
+
+    &__name{
+        font-size: $font-size_24;
+        margin-bottom: $space_40;
+    }
+
+    &__count{
+
+        &-text{
+            font-weight: bold;
+            text-align: center;
+        }    
+
+        &--post{
+            margin: 0 $space_10;
+        }
+    }
+
+    &__introduction{
+        margin: $space_40 0;
+    }
+
+
+    &__message{
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,52 @@
+@use '../../Foundation/variables' as *;
+
+.p-nav{
+
+    @include mq(){
+        display: none;
+
+        &.is-open{
+            background: $purple;
+            display: block;
+            height: auto;
+            left: 0;
+            max-height: 100vh;
+            overflow-y: auto;
+            padding: 45px 0;
+            position: absolute;
+            top: 0;
+            text-align: center;
+            width: 100%;
+            z-index: 5;
+        }
+    }
+
+    &__list{
+        align-items: center;
+        display: flex;
+        
+        @include mq(){
+            flex-direction: column;
+        }
+    }
+
+    &__item{
+        @include mq(){
+            padding: $space_20 0;
+        }
+    }
+
+    &__link{
+        color: $white;
+
+        &:hover{
+            color: $pink;
+            font-weight: bold;
+        }
+
+        @include mq(lg){
+            padding: $space-10 $space_default;
+        }
+    }
+
+}

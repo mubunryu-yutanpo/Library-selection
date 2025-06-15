@@ -1,0 +1,73 @@
+@use '../../Foundation/variables' as *;
+
+.p-action{
+    position: relative;
+
+    &__image{
+        @include mq(){
+            display: none;
+        }
+
+        &--sp{
+            display: none;
+
+            @include mq(){
+                display: block;
+            }
+        }
+    }
+
+    &__text{
+        bottom: 13%;
+        left: 7%;
+        position: absolute;
+        text-align: center;
+        width: 30%;
+
+        @include mq(){
+            bottom: 5%;
+            left: 0;
+            width: 100%;
+        }
+
+        @include mq(sm){
+            bottom: 4%;
+            font-size: $font-size_14;
+        }
+    }
+
+    &__button{
+        background: $purple;
+        bottom: 20%;
+        font-size: $font-size_20;
+        left: 7%;
+        position: absolute;
+        width: 30%;
+
+        @include mq(lg){
+            font-size: $font-size_18;
+        }
+
+        @include mq(){
+            bottom: 10%;
+            font-size: $font-size_default;
+            left: 25%;
+            right: 25%;
+            width: 50%;
+        }
+
+        :hover{
+            color: $purple
+        }
+    }
+
+    &__link{
+        color: $white;
+        font-weight: bold;
+        padding: 0 $space_20;
+
+        &:hover{
+            color: $purple;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+@use '../../Foundation/variables' as *;
+
+.c-error{
+    border: 2px solid $red;
+
+    &--text{
+        border: none;
+        color: $red;
+        font-weight: bold;
+        margin-top: $space-5;
+    }
+}

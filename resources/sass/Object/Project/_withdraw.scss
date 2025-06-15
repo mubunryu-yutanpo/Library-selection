@@ -1,0 +1,24 @@
+@use '../../Foundation/variables' as *;
+
+.p-withdraw{
+
+    &__container{
+        padding: $space_40 0;
+        text-align: center;    
+    }
+
+    &__text{
+        color: $red;
+        font-weight: bold;
+        margin-bottom: $space_30;
+    }
+
+    &__button{
+        width: 30%;
+
+        @include mq(){
+            max-width: 400px;
+            width: 100%;
+        }
+    }
+}

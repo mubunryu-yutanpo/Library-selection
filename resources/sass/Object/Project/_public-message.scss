@@ -1,0 +1,27 @@
+@use '../../Foundation/variables' as *;
+
+.p-public-message{
+    border: 2px solid gray;
+    border-radius: 5px;
+    box-shadow: 0 0 8px 0 gray;
+    margin: 50px auto;
+    padding: $space_20 $space_default;
+
+    &__toggle-button{
+        background-color: $lightblue;
+        box-shadow: 0 0 3px 0 $gray;
+        color: black;
+        display: block;
+        font-size: $font-size_14;
+        margin: $space_20 0 $space_20 auto;
+        padding: $space_5 $space_10;
+        text-align: center;
+        width: 150px;
+
+        &:hover{
+            background-color: $gray;
+            color: $blue;
+        }
+    }
+
+}

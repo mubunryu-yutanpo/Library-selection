@@ -1,0 +1,29 @@
+@use '../../Foundation/variables' as *;
+
+.p-mypage-list{
+
+    &__container{
+        margin-right: -15px;
+        padding: 0 0 0 $space_default;
+
+        &--link{
+            margin-top: $space_default;
+        }
+
+        @include mq(){
+            padding: 0;
+        }
+
+        @include mq(sm){
+            margin: 0;
+        }
+    }
+
+    &__link{
+        margin-right: $space_5;
+    }
+
+    &__none{
+        margin: 50px $space-20;
+    }
+}

@@ -1,0 +1,89 @@
+@use './variables' as *;
+
+html {
+  font-size: $font-size_default;
+  font-family: Quicksand, 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+body, a, button, li, ul, p, label {
+  border: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body {
+  background-color: rgba(255, 255, 170, 0.8); // $yellow の透明度80%
+  box-sizing: border-box;
+  color: $black;
+  position: relative;
+}
+
+a, button, input, textarea {
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+a {
+  color: $blue;
+}
+
+a:focus,
+button:focus {
+  outline: none;
+}
+
+img {
+  vertical-align: bottom;
+  width: 100%;
+}
+
+h1, h2, h3, h4 {
+  margin-bottom: 0.5rem;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.2;
+  color: inherit;
+  word-break: normal;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+}
+
+h2 {
+  font-size: 1.8rem;
+
+  @include mq(sm) {
+    font-size: 1.63rem;
+  }
+}
+
+h3 {
+  font-size: 1.575rem;
+
+  @include mq(sm) {
+    font-size: 1.4rem;
+  }
+}
+
+h4 {
+  font-size: 1.28rem;
+}
+
+textarea, input {
+  border: none;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+label {
+  margin-bottom: $space-5;
+}
+
+textarea {
+  resize: none;
+}

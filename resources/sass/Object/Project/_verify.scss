@@ -1,0 +1,23 @@
+@use '../../Foundation/variables' as *;
+
+.p-verify{
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 8px 0 white;
+    padding: 50px 60px;
+    text-align: center;
+
+    @include mq(){
+        text-align: left;
+    }
+
+    @include mq(sm){
+        padding: $space_40 $space-20;
+        text-align: left;
+    }
+
+    &__link{
+        font-weight: bold;
+        padding: 0;
+    }
+}

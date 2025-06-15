@@ -1,0 +1,16 @@
+@use '../../Foundation/variables' as *;
+
+.p-message{
+    background: $white;
+    border-radius: 5px;
+    box-shadow: 0 0 2px 0 gray;
+    max-height: 750px;
+    min-height: 300px;
+    overflow-y: auto;
+
+    &__container{
+        margin: 0 0 $space_default;
+        padding: $space_20 $space_10;
+    }
+
+}

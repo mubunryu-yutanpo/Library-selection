@@ -1,0 +1,16 @@
+@use '../../Foundation/variables' as *;
+
+.c-input{
+    background-color: $gray;
+    box-shadow: 0 0 3px 0 $brown;
+    cursor: pointer;
+    padding: $space_default $space-20;
+    width: 100%;
+
+    &--remember{
+        background: none;
+        box-shadow: none;
+        width: auto;
+    }
+
+}
