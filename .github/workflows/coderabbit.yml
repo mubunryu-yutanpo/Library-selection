@@ -1,0 +1,19 @@
+# .github/workflows/coderabbit.yml
+name: code-review
+
+on:
+  pull_request:
+
+jobs:
+  code_review:
+    runs-on: ubuntu-latest
+    steps:
+      # リポジトリをチェックアウト
+      - uses: actions/checkout@v3
+
+      # CodeRabbit の GitHub Action を呼び出し
+      - name: Run CodeRabbit AI Review
+        uses: coderabbitai/ai-pr-reviewer@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          # system_message など細かい設定は action.yml を参照
